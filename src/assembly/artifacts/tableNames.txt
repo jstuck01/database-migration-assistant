@@ -1,0 +1,4 @@
+locations
+products
+sales
+sales_detail
