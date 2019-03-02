@@ -24,7 +24,7 @@ When processing large amounts of data, the processing runtime can be reduced by 
 
 The utility leverages a configuration file that defines the attributes needed to execute a data migration.  For example, connection information for both the source and target databases.  Cloud object storage information such as credentials and storage buckets to use.  As well as runtime information such as where to store the exported CSV files and what table names should be processed.  See below for detailed configuration information. 
 
-The Database Migration Assistant supports built in data types with the exception of LOB types.  For TIMESTAMP data types which require specific formatting, the utility supports specifying a format string to be used for import.   
+The Database Migration Assistant supports built in data types with the exception of LOB types.  For TIMESTAMP data types which require specific formatting, the utility supports specifying a format string to be used for import. 
 
 ## Getting Started
 Pull the repository and execute maven to build the project.  (e,g,:  mvn package)  This will result in the distribution being created as a compressed file.  Decompress the file to access the artifacts.  Distribution packages are created as TAR and ZIP archives. 
@@ -94,7 +94,11 @@ EXPORT_FILE_LOCATION	|  C:\\holding\\db2files\\ or /home/db2inst/export/	| Full 
  
 
 ## Encryption Information ##
-IBM Cloud Object Storage encrypts all data in motion and at rest.  All data within Db2 is encrypted at the file system level.  
+IBM Cloud Object Storage encrypts all data in motion and at rest.  All data within Db2 is encrypted at the file system level.
+
+
+## Related Topics ##
+<a href="https://www.ibm.com/cloud/lift">IBM Lift - https://www.ibm.com/cloud/lift</a>  
  
 
 
