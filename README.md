@@ -85,7 +85,7 @@ TARGET_DATABASE_PASSWORD	|  password	| The password to use when connecting to th
 TARGET_USE_SSL_CONNECTION	| false / true	| Use SSL for the connection		| YES
 TARGET_USE_TIMESTAMP_FORMAT	| true / false	| Should the timestamp format option be used for load	| YES
 TARGET_TIMESTAMP_FORMAT	|  YYYY-MM-DD-HH24.MI.SS.FF6	| A valid timestamp format string for Db2. | Only when setting use timestamp formatting to true.
-TARGET_LOAD_ARGS  |  DELIMITER '|' SKIPROWS 1  | CREATE EXTERNAL TABLE statement arguments for Db2. | NO 
+TARGET_LOAD_ARGS  |  DELIMITER '`|`' SKIPROWS 1  | CREATE EXTERNAL TABLE statement arguments for Db2. | NO 
 
 ### Export Configuration
 Config Variable | Example Value | Description | Required
