@@ -107,6 +107,11 @@ public class ConfigurationBean {
 	 * The timestamp format. Must be a valid Db2 timestamp format.
 	 */
 	private String targetTimestampFormat = "";
+	
+	/**
+	 * The arguments to use as part of the external table load
+	 */
+	private String targetLoadArgs = "";
 
 	// Config Variables Export
 	/**
@@ -206,6 +211,8 @@ public class ConfigurationBean {
 		this.targetDbPassword = props.getProperty("TARGET_DATABASE_PASSWORD");
 		this.useTargetTimestampFormat = Boolean.valueOf(props.getProperty("TARGET_USE_TIMESTAMP_FORMAT"));
 		this.targetTimestampFormat = props.getProperty("TARGET_TIMESTAMP_FORMAT");
+		this.targetLoadArgs = props.getProperty("TARGET_LOAD_ARGS");
+		
 
 		// Export
 		this.tableNamesFileName = props.getProperty("TABLE_NAMES_FILE");
@@ -429,6 +436,14 @@ public class ConfigurationBean {
 
 	public void setTargetTimestampFormat(String targetTimestampFormat) {
 		this.targetTimestampFormat = targetTimestampFormat;
+	}
+
+	public String getTargetLoadArgs() {
+		return targetLoadArgs;
+	}
+
+	public void setTargetLoadArgs(String targetLoadArgs) {
+		this.targetLoadArgs = targetLoadArgs;
 	}
 
 	// EXPORT

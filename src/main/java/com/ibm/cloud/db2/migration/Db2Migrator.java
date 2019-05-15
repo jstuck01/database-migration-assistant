@@ -128,7 +128,7 @@ public class Db2Migrator {
 		logger.info("LOAD PHASE STARTED");
 		DB2Connection db2conn = new DB2Connection(this.config);
 		Statement statement;
-		// Connection connection = db2conn.getTargetConnection();
+		//Connection connection = db2conn.getTargetConnection();
 		try {
 			for (String tableName : this.tableNames) {
 				logger.info("Loading Table: " + tableName);
@@ -176,8 +176,8 @@ public class Db2Migrator {
 	 */
 	private String getDb2LoadCommand(String fileName, String tableName) {
 		String command = "insert into " + tableName + " select * from external '" + fileName
-				+ "' using (s3('s3-api.us-geo.objectstorage.softlayer.net', '" + this.config.getAccessKeyId() + "', '"
-				+ this.config.getSecretAccessKey() + "', '" + this.config.getBucketName() + "' ) DELIMITER '|' ";
+				+ "' using (s3('s3.us-east.cloud-object-storage.appdomain.cloud', '" + this.config.getAccessKeyId() + "', '"
+				+ this.config.getSecretAccessKey() + "', '" + this.config.getBucketName() + "' ) " + this.config.getTargetLoadArgs() + " ";
 		if (this.config.isUseTargetTimestampFormat()) {
 			command = command + "TIMESTAMP_FORMAT '" + this.config.getTargetTimestampFormat() + "'";
 		}
